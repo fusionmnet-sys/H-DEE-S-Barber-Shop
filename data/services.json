@@ -1,0 +1,10 @@
+{
+  "services": [
+    { "name": "Classic Haircut", "description": "Clipper or scissor cut, styled to perfection", "price": "$25" },
+    { "name": "Fade", "description": "Low, mid, or high fade — any style", "price": "$30" },
+    { "name": "Hot Razor Shave", "description": "Hot towel, straight razor, aftershave", "price": "$35" },
+    { "name": "Cut + Shave Combo", "description": "Full experience, one visit", "price": "$55" },
+    { "name": "Beard Trim", "description": "Shape, line, and condition", "price": "$15" },
+    { "name": "Kids Cut", "description": "Under 12, seated with parent", "price": "$18" }
+  ]
+}
