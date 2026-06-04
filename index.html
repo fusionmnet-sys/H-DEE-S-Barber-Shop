@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H & Dee's Barbershop | Toledo, OH</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background: #0a0a0a; color: #f0e6d3; }
+
+    header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d1f0e 100%);
+      padding: 80px 20px 60px;
+      text-align: center;
+      border-bottom: 3px solid #c9902a;
+    }
+    .logo {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #c9902a;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    .tagline {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-top: 10px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+    }
+    nav a {
+      color: #c9902a;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    nav a:hover { color: #fff; }
+
+    .hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1400") center/cover;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #ddd;
+      max-width: 500px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 36px;
+      background: #c9902a;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      font-size: 0.9rem;
+    }
+    .btn:hover { background: #e0a830; }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: #c9902a;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-top: 3px solid #c9902a;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .service-card h3 {
+      color: #c9902a;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .service-card p {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .price {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .hours-contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .info-box {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 30px;
+    }
+    .info-box h3 {
+      color: #c9902a;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .info-box p {
+      color: #bbb;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .gold { color: #c9902a; }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 30px;
+      color: #555;
+      font-size: 0.85rem;
+      border-top: 1px solid #222;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .hours-contact { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+      .logo { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" id="logo"></div>
+  <div class="tagline" id="tagline"></div>
+</header>
+
+<nav>
+  <a href="#services">Services</a>
+  <a href="#hours">Hours</a>
+  <a href="#contact">Contact</a>
+  <a href="#" id="nav-directions" target="_blank" rel="noopener noreferrer">
+    Directions
+  </a>
+</nav>
+
+<div class="hero">
+  <h1 id="hero-heading"></h1>
+  <p id="hero-subtext"></p>
+  <a href="#" id="hero-cta" target="_blank" rel="noopener noreferrer" class="btn"></a>
+</div>
+
+<section id="services">
+  <h2>Services &amp; Pricing</h2>
+  <div class="services-grid" id="services-grid"></div>
+</section>
+
+<section id="hours">
+  <h2>Hours &amp; Location</h2>
+  <div class="hours-contact">
+    <div class="info-box">
+      <h3>⏰ Hours</h3>
+      <div id="hours-list"></div>
+      <p id="walk-in-note" style="margin-top:14px; color:#c9902a;"></p>
+    </div>
+    <div class="info-box" id="contact">
+      <h3>📍 Find Us</h3>
+      <p id="address"></p>
+      <p style="margin-top:12px;">
+        📞 <span class="gold" id="phone"></span>
+      </p>
+      <p>Tap directions to visit the shop or call ahead before you stop in.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p id="footer-text"></p>
+</footer>
+
+<script>
+async function loadData() {
+  const [siteRes, servicesRes, hoursRes] = await Promise.all([
+    fetch('./data/site.json'),
+    fetch('./data/services.json'),
+    fetch('./data/hours.json')
+  ]);
+
+  const site = await siteRes.json();
+  const { services } = await servicesRes.json();
+  const { hours } = await hoursRes.json();
+
+  document.getElementById('logo').textContent = '✂ ' + site.shop_name;
+  document.getElementById('tagline').textContent = site.tagline;
+
+  document.getElementById('hero-heading').innerHTML =
+    site.hero_heading.replace("'s", "'s<br>");
+  document.getElementById('hero-subtext').textContent = site.hero_subtext;
+
+  const heroCta = document.getElementById('hero-cta');
+  heroCta.textContent = site.cta_text;
+  heroCta.href = site.cta_link;
+
+  const navDirections = document.getElementById('nav-directions');
+  navDirections.href = site.maps_link;
+
+  document.getElementById('phone').textContent = site.phone;
+  document.getElementById('address').innerHTML =
+    site.address_line1 + '<br>' + site.address_line2;
+
+  document.getElementById('walk-in-note').textContent = site.walk_in_note;
+
+  document.getElementById('footer-text').innerHTML =
+    '&copy; 2026 ' + site.shop_name +
+    ' Barbershop · Toledo, OH · <span class="gold">' +
+    site.footer_text + '</span>';
+
+  const grid = document.getElementById('services-grid');
+  services.forEach(s => {
+    grid.innerHTML += `
+      <div class="service-card">
+        <h3>${s.name}</h3>
+        <p>${s.description}</p>
+        <div class="price">${s.price}</div>
+      </div>
+    `;
+  });
+
+  const hoursList = document.getElementById('hours-list');
+  hours.forEach(h => {
+    hoursList.innerHTML += `<p>${h.day}: ${h.open} – ${h.close}</p>`;
+  });
+}
+
+loadData();
+</script>
+
+</body>
+</html>
